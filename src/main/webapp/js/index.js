@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-    var sock = new WebSocket("ws://localhost:8080/doorbell/hello");
+    var sock = new WebSocket("ws://" + location.host + "/doorbell/chime");
 
     sock.onopen = function() {
         console.log('open');

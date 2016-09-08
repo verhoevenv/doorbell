@@ -1,19 +1,13 @@
+package com.github.verhoevenv.doorbell;
 
+import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import javax.websocket.CloseReason;
-import javax.websocket.OnClose;
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.ClientEndpoint;
-import javax.websocket.server.ServerEndpoint;
 
-@ClientEndpoint
-@ServerEndpoint(value="/hello")
-public class EventSocket {
+@ServerEndpoint(value="/chime")
+public class ChimetSocket {
 
     private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<Session>());
 
