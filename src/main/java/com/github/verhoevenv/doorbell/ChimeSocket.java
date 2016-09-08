@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ServerEndpoint(value="/chime")
-public class ChimetSocket {
+public class ChimeSocket {
 
     private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<Session>());
 
