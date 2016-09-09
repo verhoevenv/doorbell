@@ -9,6 +9,6 @@ public class ButtonEndpoint {
     @POST
     @Path("/ring")
     public void ring() {
-        System.out.println("Ding-dong");
+        ChimeSocket.ring();
     }
 }
