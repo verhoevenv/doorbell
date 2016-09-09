@@ -1,0 +1,31 @@
+
+.doorbell {
+    width: 70vmin;
+    height: 70vmin;
+
+    font-size: 15vmin;
+
+    color: #fff;
+    text-shadow: #de6e00 0 -1px 0;
+    border: 1px solid #ff920d;
+    border-radius: 35vmin;
+    -webkit-box-shadow: rgba(0, 0, 0, .25) 0 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, .25) 0 1px 1px;
+    -o-box-shadow: rgba(0, 0, 0, .25) 0 1px 1px;
+    box-shadow: rgba(0, 0, 0, .25) 0 1px 1px;
+    background: #ff920d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffc039), to(#ff920d));
+    background: -moz-linear-gradient(top, #ffc039, #ff920d);
+    background: -o-linear-gradient(top, #ffc039, #ff920d);
+    background: linear-gradient(top, #ffc039, #ff920d);
+}
+.doorbell:active {
+    background: #de6e00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff920d), to(#de6e00));
+    background: -moz-linear-gradient(top, #ff920d, #de6e00);
+    background: -o-linear-gradient(top, #ff920d, #de6e00);
+    background: linear-gradient(top, #ff920d, #de6e00);
+}
+.feedback {
+    font-size: x-large;
+}

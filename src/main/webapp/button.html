@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Bell</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<input type="button" id="btnRing" value="Doorbell!"/>
+<div id="wrapper" style="text-align: center">
+    <div style="display: inline-block;">
+        <h1>Hello I am a doorbell</h1>
+        <input class="doorbell" type="button" id="btnRing" value="&#x1F50A;"/>
+        <div class="feedback" id="feedback"></div>
+    </div>
+</div>
 
 <script src="webjars/jquery/2.1.3/jquery.min.js"></script>
 <script>
     $('#btnRing').click(function() {
         $.post('/doorbell/rest/button/ring')
+                .done(function () {
+                    $('#feedback').text('Ringing the doorbell!')
+                })
+                .fail(function () {
+                    $('#feedback').text('Doorbell is broken, sorry!')
+                })
     });
 </script>
 </body>
