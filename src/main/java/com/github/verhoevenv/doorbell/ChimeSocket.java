@@ -59,12 +59,5 @@ public class ChimeSocket {
     }
 
     private static class RingMessage {
-        public final String message;
-        public final Date timeetamp;
-
-        public RingMessage() {
-            message = "Ding-dong";
-            timeetamp = new Date();
-        }
     }
 }
