@@ -9,10 +9,7 @@
 <textarea id="chat-content" style="width: 500px; height: 300px"></textarea><br/>
 
 <script src="webjars/jquery/2.1.3/jquery.min.js"></script>
-<script src="webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
 <script>
-    var sock = new WebSocket("ws://" + location.host + "/doorbell/chime");
-
     function appendToLog(message) {
         $('#chat-content').val(function (i, text) {
             return text + message + '\n';
@@ -28,13 +25,15 @@
         return timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds();
     }
 
+    var sock = new WebSocket("ws://" + location.host + "/doorbell/chime");
+
     sock.onmessage = function(e) {
         var content = JSON.parse(e.data);
         playSound();
         appendToLog("[" + format(new Date()) + "] Ding-dong!");
     };
 
-
+    setInterval(function() {sock.send("Keepalive!") }, 10000);
 </script>
 </body>
 </html>

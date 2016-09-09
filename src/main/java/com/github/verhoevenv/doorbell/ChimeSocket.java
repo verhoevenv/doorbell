@@ -38,15 +38,6 @@ public class ChimeSocket {
         sessions.add(session);
     }
 
-    @OnMessage
-    public void onWebSocketText(final Session client, String message) throws Exception {
-        System.out.println("Received TEXT message: " + message);
-        for( final Session session: sessions ) {
-            if(session != client)
-                session.getBasicRemote().sendText(message);
-        }
-    }
-
     @OnClose
     public void onWebSocketClose(final Session session, CloseReason reason) {
         System.out.println("Socket Closed: " + reason);
