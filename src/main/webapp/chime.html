@@ -19,13 +19,18 @@
         });
     }
 
+    function playSound() {
+        var audio = new Audio('sound/bigben.mp3');
+        audio.play();
+    }
+
     function format(timestamp) {
         return timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds();
     }
-    
+
     sock.onmessage = function(e) {
         var content = JSON.parse(e.data);
-        console.log(content);
+        playSound();
         appendToLog("[" + format(new Date()) + "] Ding-dong!");
     };
 
