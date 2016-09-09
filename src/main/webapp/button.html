@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bell</title>
+</head>
+<body>
+<input type="button" id="btnRing" value="Doorbell!"/>
+
+<script src="webjars/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $('#btnRing').click(function() {
+        $.post('/doorbell/rest/button/ring')
+    });
+</script>
+</body>
+</html>

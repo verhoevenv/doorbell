@@ -13,15 +13,14 @@ jQuery(function($) {
     sock.onmessage = function(e) {
         var content = JSON.parse(e.data);
         $('#chat-content').val(function(i, text) {
-            return text + 'User ' + content.username + ': ' + content.message + '\n';
+            return text + content.message + '\n';
         });
     };
 
     $('#btnSend').click(function() {
         console.log('about to send');
         var message = $('#message').val();
-        var username = $('#username').val();
-        sock.send(JSON.stringify({ message: message, username: username }));
+        sock.send(JSON.stringify({ message: message }));
     });
 
 });
